@@ -1,31 +1,18 @@
-import { TestBed, async } from '@angular/core/testing';
-import { AppComponent } from './app.component';
+import {AppComponent} from './app.component';
 
-describe('AppComponent', () => {
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [
-        AppComponent
-      ],
-    }).compileComponents();
-  }));
+describe('The App', () => {
+    let app: AppComponent;
+    beforeEach(() => {
+        app = new AppComponent();
+    })
 
-  it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app).toBeTruthy();
-  });
+    it('should have a working form', () => {
+        app.form.value.name = "Franz";
+        app.form.value.lastname = "von Assissi";
+        app.form.value.mail = "franz@god.it";
+        app.addPersonViaForm();
 
-  it(`should have as title 'ex1'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('ex1');
-  });
-
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('ex1 app is running!');
-  });
-});
+        expect(app.people.length).toBe(3)
+        expect(app.people[2]).toEqual({name: "Franz", lastname: "von Assissi", mail:"franz@god.it"});
+    })
+})

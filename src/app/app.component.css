@@ -1,0 +1,12 @@
+.redButton {
+    background: red;
+    color: white;
+}
+.blueButton {
+    background: blue;
+    color: white;
+}
+:disabled {
+    background: grey;
+    color: white;
+}
