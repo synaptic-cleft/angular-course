@@ -8,9 +8,12 @@ import { PeopleService } from 'src/app/services/people.service';
 describe('ContactListComponent', () => {
   let component: ContactListComponent;
   let fixture: ComponentFixture<ContactListComponent>;
+  let mockService;
+
+  let p = { name: "Franz", lastname: "von Assissi", mail: "franz@god.it" };
 
   beforeEach(async(() => {
-    let mockService = jasmine.createSpyObj('peopleService', ['edit', 'save', 'delete'])
+    mockService = jasmine.createSpyObj('peopleService', ['edit', 'save', 'delete'])
     TestBed.configureTestingModule({
       declarations: [
         ContactListComponent,
@@ -34,5 +37,20 @@ describe('ContactListComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should go to edit mode', () => {
+    component.edit(p);
+    expect(mockService.edit).toHaveBeenCalledWith(p);
+  });
+
+  it('should go to save mode', () => {
+    component.save(p);
+    expect(mockService.save).toHaveBeenCalledWith(p);
+  });
+
+  it('should go to delete mode', () => {
+    component.delete(p);
+    expect(mockService.delete).toHaveBeenCalledWith(p);
   });
 });

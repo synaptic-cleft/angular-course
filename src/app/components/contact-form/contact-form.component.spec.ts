@@ -10,7 +10,7 @@ describe('ContactFormComponent', () => {
   let mockPeopleService;
 
   beforeEach(async(() => {
-    mockPeopleService = jasmine.createSpyObj('peopleService', ['edit', 'save', 'delete', 'addPerson']);
+    mockPeopleService = jasmine.createSpyObj('peopleService', ['addPerson']);
 
     TestBed.configureTestingModule({
       declarations: [ContactFormComponent],
