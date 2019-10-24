@@ -6,16 +6,17 @@ import { HttpClient } from '@angular/common/http';
 export class PeopleService {
   people: Person[] = [];
   constructor(private http: HttpClient){
-    console.log("asdf");
-
     this.http.get<Person[]>("http://localhost:3000/people").subscribe(value => {
-      console.log("hi");
       value.map(p => this.people.push(p))
     })
   }
 
   addPerson(value) {
     this.people.push(value);
+
+    //todo: push all changes to server
+    //extra: update site when server data is updated
+    // this.http.post<Person>("http://localhost:3000/people", value).subscribe()
   }
 
   edit(p) {
