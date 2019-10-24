@@ -4,11 +4,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { FullnamePipe } from './pipes/fullname.pipe';
+import { ContactFormComponent } from './components/contact-form/contact-form.component';
+import { ContactListComponent } from './components/contact-list/contact-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FullnamePipe
+    FullnamePipe,
+    ContactFormComponent,
+    ContactListComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,25 @@
+<table>
+    <tr>
+      <th>Name</th>
+      <th>E-mail address</th>
+      <th></th>
+      <th></th>
+    </tr>
+    <tbody>
+      <tr *ngFor="let p of people">
+        <td>
+          <span *ngIf="!p.editMode">{{p | fullname}}</span>
+          <span *ngIf="p.editMode"><input [(ngModel)]="p.name"> <input [(ngModel)]="p.lastname"></span>
+        </td>
+        <td>
+          <span *ngIf="!p.editMode">{{p.mail}}</span>
+          <span *ngIf="p.editMode"><input [(ngModel)]="p.mail"></span>
+        </td>
+        <td>
+          <span *ngIf="!p.editMode"><button (click)=edit(p)>Edit</button></span>
+          <span *ngIf="p.editMode"><button (click)=save(p)>Save</button></span>
+          <button (click)=delete(p) class="redButton">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>

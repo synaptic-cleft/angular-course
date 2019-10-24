@@ -1,0 +1,19 @@
+<form [formGroup]="form" (submit)="addPersonViaForm()">
+    <ul>
+      <li>
+        First name: <br />
+        <input id="name" placeholder="Laura" formControlName="name" autocomplete="off">
+      </li>
+      <li>
+        Surname: <br />
+        <input id="lastname" placeholder="Kendrick" formControlName="lastname">
+      </li>
+      <li>
+        E-mail address: <br />
+        <input id="mail" placeholder="l.kendrick@live.com" formControlName="mail">
+      </li>
+      <li>
+        <button [disabled]="form.invalid" class="blueButton">Add</button>
+      </li>
+    </ul>
+  </form>

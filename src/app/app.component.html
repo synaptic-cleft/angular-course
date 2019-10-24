@@ -1,47 +1,4 @@
 <h2>People</h2>
 
-<form [formGroup]="form" (submit)="addPersonViaForm()">
-  <ul>
-    <li>
-      First name: <br />
-      <input id="name" placeholder="Laura" formControlName="name" autocomplete="off">
-    </li>
-    <li>
-      Surname: <br />
-      <input id="lastname" placeholder="Kendrick" formControlName="lastname">
-    </li>
-    <li>
-      E-mail address: <br />
-      <input id="mail" placeholder="l.kendrick@live.com" formControlName="mail">
-    </li>
-    <li>
-      <button [disabled]="form.invalid" class="blueButton">Add</button>
-    </li>
-  </ul>
-</form>
-
-<table>
-  <tr>
-    <th>Name</th>
-    <th>E-mail address</th>
-    <th></th>
-    <th></th>
-  </tr>
-  <tbody>
-    <tr *ngFor="let p of people">
-      <td>
-        <span *ngIf="!p.editMode">{{p | fullname}}</span>
-        <span *ngIf="p.editMode"><input [(ngModel)]="p.name"> <input [(ngModel)]="p.lastname"></span>
-      </td>
-      <td>
-        <span *ngIf="!p.editMode">{{p.mail}}</span>
-        <span *ngIf="p.editMode"><input [(ngModel)]="p.mail"></span>
-      </td>
-      <td>
-        <span *ngIf="!p.editMode"><button (click)=edit(p)>Edit</button></span>
-        <span *ngIf="p.editMode"><button (click)=save(p)>Save</button></span>
-        <button (click)=delete(p) class="redButton">Delete</button>
-      </td>
-    </tr>
-  </tbody>
-</table>
+<contact-form (add)="handleAdd($event)"></contact-form>
+<contact-list></contact-list>

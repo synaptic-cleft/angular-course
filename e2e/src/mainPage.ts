@@ -16,5 +16,4 @@ export class MainPage {
     async load() {
         await browser.get('http://localhost:4200');
     }
-
 }
