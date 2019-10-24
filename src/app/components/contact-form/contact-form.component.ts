@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { PeopleService } from 'src/app/services/people.service';
 
 @Component({
   selector: 'contact-form',
@@ -7,10 +8,9 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
   styleUrls: ['./contact-form.component.css']
 })
 export class ContactFormComponent implements OnInit {
-  @Output() add = new EventEmitter();
   form: FormGroup;
 
-  constructor() {
+  constructor(private peopleService: PeopleService) {
     this.form = new FormGroup({
       name: new FormControl(undefined, [Validators.required, Validators.pattern('^[A-Z]?[a-z]+$')]),
       lastname: new FormControl(undefined, [Validators.required]),
@@ -19,7 +19,7 @@ export class ContactFormComponent implements OnInit {
   }
 
   addPersonViaForm() {
-    this.add.emit(this.form.value);
+    this.peopleService.addPerson(this.form.value);
   }
 
   ngOnInit() {

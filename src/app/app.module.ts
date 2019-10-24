@@ -4,6 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { FullnamePipe } from './pipes/fullname.pipe';
+import { PeopleService } from './services/people.service';
 import { ContactFormComponent } from './components/contact-form/contact-form.component';
 import { ContactListComponent } from './components/contact-list/contact-list.component';
 
@@ -19,7 +20,7 @@ import { ContactListComponent } from './components/contact-list/contact-list.com
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [PeopleService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import { Person } from 'src/app/model/person';
+import { PeopleService } from 'src/app/services/people.service';
 
 @Component({
   selector: 'contact-list',
@@ -7,25 +8,23 @@ import { Person } from 'src/app/model/person';
   styleUrls: ['./contact-list.component.css']
 })
 export class ContactListComponent implements OnInit {
-  people: Person[] = [
-    {name: "Frank", lastname: "Muscles", mail: "frank@muscles.com", editMode: false},
-    {name: "Eddy", lastname: "Valentino", mail: "eddy@valfam.co.uk", editMode: false}
-  ]
+  people;
+  constructor(private peopleService: PeopleService) {}
 
   edit(p) {
-    p.editMode = true;
+    this.peopleService.edit(p)
   }
 
   save(p) {
-    p.editMode = false;
+    this.peopleService.save(p);
   }
 
   delete(p) {
-    let index = this.people.indexOf(p);
-    this.people.splice(index, 1);
+    this.peopleService.delete(p)
   }
 
   ngOnInit() {
+    this.people = this.peopleService.people;
   }
 
 }
