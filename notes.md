@@ -33,3 +33,9 @@ HTML5 APIs:
 
 generate compoenent:
 ng g c components/contact-form
+
+
+npm i -g json-server
+maak databestand in json (je kunt evtl json pipe gebruiken)
+json-server people.json --watch
+localhost:3000/bla

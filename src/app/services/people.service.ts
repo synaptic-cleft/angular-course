@@ -1,12 +1,18 @@
-import {Injectable} from '@angular/core';
+import {Injectable, OnInit} from '@angular/core';
 import {Person} from '../model/person';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable()
 export class PeopleService {
-    people: Person[] = [
-        {name: "Frank", lastname: "Muscles", mail: "frank@muscles.com", editMode: false},
-        {name: "Eddy", lastname: "Valentino", mail: "eddy@valfam.co.uk", editMode: false}
-      ]
+  people: Person[] = [];
+  constructor(private http: HttpClient){
+    console.log("asdf");
+
+    this.http.get<Person[]>("http://localhost:3000/people").subscribe(value => {
+      console.log("hi");
+      value.map(p => this.people.push(p))
+    })
+  }
 
   addPerson(value) {
     this.people.push(value);

@@ -7,6 +7,7 @@ import { FullnamePipe } from './pipes/fullname.pipe';
 import { PeopleService } from './services/people.service';
 import { ContactFormComponent } from './components/contact-form/contact-form.component';
 import { ContactListComponent } from './components/contact-list/contact-list.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ContactListComponent } from './components/contact-list/contact-list.com
   imports: [
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [PeopleService],
   bootstrap: [AppComponent]

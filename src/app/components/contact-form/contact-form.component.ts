@@ -10,19 +10,18 @@ import { PeopleService } from 'src/app/services/people.service';
 export class ContactFormComponent implements OnInit {
   form: FormGroup;
 
-  constructor(private peopleService: PeopleService) {
-    this.form = new FormGroup({
-      name: new FormControl(undefined, [Validators.required, Validators.pattern('^[A-Z]?[a-z]+$')]),
-      lastname: new FormControl(undefined, [Validators.required]),
-      mail: new FormControl(undefined, [Validators.required, Validators.email])
-    })
-  }
+  constructor(private peopleService: PeopleService) {}
 
   addPersonViaForm() {
     this.peopleService.addPerson(this.form.value);
   }
 
   ngOnInit() {
+    this.form = new FormGroup({
+      name: new FormControl(undefined, [Validators.required, Validators.pattern('^[A-Z]?[a-z]+$')]),
+      lastname: new FormControl(undefined, [Validators.required]),
+      mail: new FormControl(undefined, [Validators.required, Validators.email])
+    })
   }
 
 }

@@ -1,0 +1,16 @@
+{
+    "people": [
+        {
+            "name": "Frank",
+            "lastname": "Muscles",
+            "mail": "frank@muscles.com",
+            "editMode": false
+        },
+        {
+            "name": "Eddy",
+            "lastname": "Valentino",
+            "mail": "eddy@valfam.co.uk",
+            "editMode": false
+        }
+    ]
+}
