@@ -6,7 +6,7 @@
       <th></th>
     </tr>
     <tbody>
-      <tr *ngFor="let p of people">
+      <tr *ngFor="let p of people" hover="lightGray">
         <td>
           <span *ngIf="!p.editMode">{{p | fullname}}</span>
           <span *ngIf="p.editMode"><input [(ngModel)]="p.name"> <input [(ngModel)]="p.lastname"></span>

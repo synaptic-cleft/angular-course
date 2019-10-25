@@ -14,6 +14,7 @@ import { DateFinderComponent } from './pages/date-finder/date-finder.component';
 import { ShinyFormComponent } from './components/shiny-form/shiny-form.component';
 import { MdcFormFieldModule, MdcHelperText, MdcTextFieldModule } from '@angular-mdc/web';
 import { FocusOnDirective } from './services/onfocus.directive';
+import { HoverDirective } from './services/hover.directive';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { FocusOnDirective } from './services/onfocus.directive';
     ContactListComponent,
     DateFinderComponent,
     ShinyFormComponent,
-    FocusOnDirective
+    FocusOnDirective,
+    HoverDirective
   ],
   imports: [
     BrowserModule,
