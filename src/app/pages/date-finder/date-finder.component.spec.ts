@@ -4,7 +4,7 @@ import { DateFinderComponent } from './date-finder.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 // integration test this
-fdescribe('DateFinderComponent', () => {
+describe('DateFinderComponent', () => {
   let component: DateFinderComponent;
   let fixture: ComponentFixture<DateFinderComponent>;
 
