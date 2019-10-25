@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { MdcFormFieldModule } from '@angular-mdc/web';
 
 @Component({
   selector: 'shiny-form',

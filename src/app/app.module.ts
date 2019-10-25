@@ -12,7 +12,7 @@ import {RouterModule} from "@angular/router";
 import {routes} from "./routes";
 import { DateFinderComponent } from './pages/date-finder/date-finder.component';
 import { ShinyFormComponent } from './components/shiny-form/shiny-form.component';
-import { MdcFormFieldModule } from '@angular-mdc/web';
+import { MdcFormFieldModule, MdcHelperText, MdcTextFieldModule } from '@angular-mdc/web';
 
 @NgModule({
   declarations: [
@@ -29,7 +29,8 @@ import { MdcFormFieldModule } from '@angular-mdc/web';
     ReactiveFormsModule,
     HttpClientModule,
     RouterModule.forRoot(routes),
-    MdcFormFieldModule
+    MdcFormFieldModule,
+    MdcTextFieldModule
   ],
   providers: [PeopleService],
   bootstrap: [AppComponent]
