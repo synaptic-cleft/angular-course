@@ -39,3 +39,24 @@ npm i -g json-server
 maak databestand in json (je kunt evtl json pipe gebruiken)
 json-server people.json --watch
 localhost:3000/bla
+
+
+#web sockets
+possibility for homework (or not)
+
+new folder chatserver
+
+npm i --init
+(makes package.json)
+
+expresjs.com
+expres-ws
+npm install express express-ws
+
+paste code from THE internet
+
+node .\index.js
+
+additional: abstract the connectivity to your websocket chat to a service which is an observable
+
+#integration test
