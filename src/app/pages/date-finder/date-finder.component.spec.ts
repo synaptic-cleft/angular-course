@@ -3,7 +3,8 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { DateFinderComponent } from './date-finder.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-describe('DateFinderComponent', () => {
+// integration test this
+fdescribe('DateFinderComponent', () => {
   let component: DateFinderComponent;
   let fixture: ComponentFixture<DateFinderComponent>;
 
@@ -26,5 +27,10 @@ describe('DateFinderComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+
+    const todayOption = (fixture.nativeElement as HTMLElement).querySelector('option');
+    const list = fixture.nativeElement.querySelectorAll('li');
+    expect(list.length).toBe(4);
+    expect(todayOption.value).toBe("today");
   });
 });
