@@ -11,6 +11,8 @@ import { HttpClientModule } from '@angular/common/http';
 import {RouterModule} from "@angular/router";
 import {routes} from "./routes";
 import { DateFinderComponent } from './pages/date-finder/date-finder.component';
+import { ShinyFormComponent } from './components/shiny-form/shiny-form.component';
+import { MdcFormFieldModule } from '@angular-mdc/web';
 
 @NgModule({
   declarations: [
@@ -18,14 +20,16 @@ import { DateFinderComponent } from './pages/date-finder/date-finder.component';
     FullnamePipe,
     ContactFormComponent,
     ContactListComponent,
-    DateFinderComponent
+    DateFinderComponent,
+    ShinyFormComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    MdcFormFieldModule
   ],
   providers: [PeopleService],
   bootstrap: [AppComponent]
