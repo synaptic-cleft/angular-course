@@ -13,6 +13,7 @@ import {routes} from "./routes";
 import { DateFinderComponent } from './pages/date-finder/date-finder.component';
 import { ShinyFormComponent } from './components/shiny-form/shiny-form.component';
 import { MdcFormFieldModule, MdcHelperText, MdcTextFieldModule } from '@angular-mdc/web';
+import { FocusOnDirective } from './services/onfocus.directive';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { MdcFormFieldModule, MdcHelperText, MdcTextFieldModule } from '@angular-
     ContactFormComponent,
     ContactListComponent,
     DateFinderComponent,
-    ShinyFormComponent
+    ShinyFormComponent,
+    FocusOnDirective
   ],
   imports: [
     BrowserModule,
